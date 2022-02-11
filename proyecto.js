@@ -1,3 +1,4 @@
+//noprotect
 //Variables utiles 
 //Precio base de la cotización, en quetzales, lo puede cambiar
 var precio_base = 2000
@@ -13,7 +14,9 @@ var casado_25 = 0.2 // 20%
 var casado_50 = 0.3 // 30%
 
 var hijos_recargo = 0.2 // 20%
-
+// Salida del ciclo
+var continuar = ""
+while(continuar!="Salir"){
 
 //Recargo
 var recargo = 0
@@ -126,5 +129,5 @@ precio_final = precio_base + recargo_total
 alert ("Para el asegurado "+nombre)
 alert ("El recargo total sera de: "+recargo_total)
 alert ("El precio sera de: "+precio_final)
-
-
+continuar = prompt("¿Desea Continuar o Salir? Solo puede elegir una de estas dos opciones con inicial mayuscula")
+}
