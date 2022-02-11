@@ -6,7 +6,8 @@ var precio_base = 2000
 var edad_18 = 0.1// 10%
 var edad_25 = 0.2 // 20%
 var edad_50 = 0.3 // 30%
-
+var recargo_salario = 0.05 // 5%
+var recargo_propiedades = 0.35 // 35%
 var casado_18 = 0.1 // 10%
 var casado_25 = 0.2 // 20%
 var casado_50 = 0.3 // 30%
@@ -24,7 +25,8 @@ var precio_final = 0
 //Mensajes de alerta para ingresar datos 
 var nombre = prompt("Ingrese su nombre, por favor")
 var edad = prompt("¿Cuantos años tiene? Ingrese solamente números ")
-
+var propiedades = prompt("¿Ingrese valor de sus propiedades? Ingrese Solamente Cantidades")
+var salario = prompt("¿Ingrese su salario mensual? Ingrese solo cantidades")
 var casado = prompt('¿Está casado actualmente?','SI/NO')
 //Comprobamos la edad del cónyuge, solamente si se está casado/a
 var edad_conyuge
@@ -51,6 +53,14 @@ var cantidad_hijos_numero
 if ("SI"==hijos.toUpperCase()){
   cantidad_hijos_numero = parseInt(cantidad_hijos)
 }
+var salario_numero
+var propiedades_numero
+if (propiedades > 0){
+  propiedades_numero = parseInt(propiedades)
+} 
+if (salario > 0){
+  salario_numero = parseInt(salario)
+}
 //Aquí debe calcular el recargo total basado en las respuestas ingresadas
 
 //Aquí es donde debe de calcular los recargos y el valor final
@@ -73,10 +83,10 @@ if(edad_conyuge_numero>=18 && edad_conyuge_numero<25){
   recargo = precio_base * casado_25
 }else if (edad_conyuge_numero>=50){
 recargo = precio.precio_base * casado_50
-alert("El recargo por la edad de su conyugue es de " + recargo)
 }else {
   recargo = 0
 }
+alert("El recargo por la edad de su conyugue es de " + recargo)
 /** 
  * 2. Recargo por la edad del conyuge
  */
@@ -91,9 +101,30 @@ if (cantidad_hijos_numero > 0){
   recargo = 0
 }
 recargo_total = recargo + recargo_total
+/**
+ * 4. Recargo por porcentaje de salario 
+ * */
+if (salario_numero > 0){
+  recargo = salario_numero * recargo_salario
+  alert("El recargo por salario ingresado es de "+ recargo)
+} else {
+  recargo = 0
+}
+recargo_total = recargo + recargo_total
+/**
+ *  5. Recargo por propiedades
+ * */
+if (propiedades_numero > 0){
+  recargo = propiedades_numero * recargo_propiedades
+  alert("El recargo por propiedades es de "+ recargo)
+}else {
+  recargo = 0
+}
+recargo_total = recargo + recargo_total
 precio_final = precio_base + recargo_total
 //Resultado
 alert ("Para el asegurado "+nombre)
 alert ("El recargo total sera de: "+recargo_total)
 alert ("El precio sera de: "+precio_final)
+
 
