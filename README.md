@@ -1,4 +1,4 @@
-#Cotizador Seguros EmpresaTK-U
+# Cotizador Seguros EmpresaTK-U
 
 ***se presenta un programa que cotiza los recargos sobre variables del cliente para dar un precio final de poliza 
 seguro.***
