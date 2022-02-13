@@ -2,6 +2,7 @@
 
 ***se presenta un programa que cotiza los recargos sobre variables del cliente para dar un precio final de poliza 
 seguro.***
+
 *El programa inicia preguntando nombre, edad, si tiene esposa y si tiene hijos y cuantos hijos tiene el cliente.
 valor de sus propiedades y salario del cliente.
 Luego el programa calcula en base a la edad del cliente que porcentaje le corresponde.
